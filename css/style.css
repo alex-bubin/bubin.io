@@ -74,9 +74,16 @@ nav {
   font-family: var(--font-mono);
   font-size: 1rem;
   font-weight: bold;
-  color: var(--accent);
   letter-spacing: 0.15em;
   text-transform: uppercase;
+}
+
+.nav-name-first {
+  color: var(--white);
+}
+
+.nav-name-last {
+  color: var(--accent);
 }
 
 .nav-logo span {
@@ -490,6 +497,15 @@ section {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.about-photo-credit {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--grey);
+  letter-spacing: 0.08em;
+  margin-top: 0.5rem;
+  text-align: right;
 }
 
 .about-text h2 {
