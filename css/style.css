@@ -86,9 +86,7 @@ nav {
   color: var(--accent);
 }
 
-.nav-logo span {
-  color: var(--white);
-}
+
 
 .nav-links {
   list-style: none;
