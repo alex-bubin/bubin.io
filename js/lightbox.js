@@ -1,5 +1,5 @@
 /**
- * Lightbox — pure vanilla JS, no dependencies.
+ * Lightbox | pure vanilla JS, no dependencies.
  * Works with .photo-item elements that have data-band, data-show, data-index attributes
  * and contain an <img> child.
  */
