@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Concert photos of Less Than Jake at The Catalyst, Santa Cruz, October 2024 by Alex Bubin.">
+  <title>Less Than Jake | October 2024 | Alex Bubin</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .show-hero { padding: 6rem 2rem 3rem; border-bottom: 1px solid var(--border); }
+    .show-meta { font-family: var(--font-mono); font-size: 0.72rem; color: var(--grey); letter-spacing: 0.1em; margin-top: 1rem; display: flex; gap: 2rem; flex-wrap: wrap; }
+    .band-section { padding: 3rem 2rem; }
+    .band-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0.5rem; }
+    .band-grid .photo-item { aspect-ratio: 3/2; }
+    .band-grid .photo-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .band-featured { grid-column: span 2; }
+    @media (max-width: 640px) { .band-featured { grid-column: span 1; } }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html"><span class="nav-name-first">Alex</span> <span class="nav-name-last">Bubin</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Work</a></li>
+      <li><a href="portfolio.html" class="active">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="licensing.html">Licensing</a></li>
+    </ul>
+  </nav>
+
+  <header class="show-hero">
+    <p class="hero-eyebrow">Show Coverage</p>
+    <h1 style="font-size: clamp(2rem, 6vw, 4.5rem); margin-bottom: 0.5rem;">Less Than Jake</h1>
+    <div class="show-meta">
+      <span>October 15, 2024</span>
+      <span>The Catalyst | Santa Cruz, CA</span>
+    </div>
+  </header>
+
+  <section class="band-section">
+    <div class="band-grid">
+      <div class="photo-item band-featured" data-band="Less Than Jake" data-show="The Catalyst / Oct 2024" data-index="0">
+        <img src="images/web/ltj-1.jpg" alt="Less Than Jake at The Catalyst, October 2024" loading="lazy">
+        <div class="photo-overlay"><span class="overlay-band">Less Than Jake</span><span class="overlay-show">The Catalyst / Oct 2024</span></div>
+      </div>
+      <div class="photo-item" data-band="Less Than Jake" data-show="The Catalyst / Oct 2024" data-index="1">
+        <img src="images/web/ltj-2.jpg" alt="Less Than Jake at The Catalyst, October 2024" loading="lazy">
+        <div class="photo-overlay"><span class="overlay-band">Less Than Jake</span><span class="overlay-show">The Catalyst / Oct 2024</span></div>
+      </div>
+      <div class="photo-item" data-band="Less Than Jake" data-show="The Catalyst / Oct 2024" data-index="2">
+        <img src="images/web/ltj-3.jpg" alt="Less Than Jake at The Catalyst, October 2024" loading="lazy">
+        <div class="photo-overlay"><span class="overlay-band">Less Than Jake</span><span class="overlay-show">The Catalyst / Oct 2024</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-logo"><span class="nav-name-first">Alex</span> <span class="nav-name-last">Bubin</span></span>
+      <nav>
+        <ul class="footer-links">
+          <li><a href="index.html">Work</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="licensing.html">Licensing</a></li>
+        </ul>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/eyelickss" target="_blank" rel="noopener">@eyelickss</a>
+        <a href="mailto:photos@bubin.io">photos@bubin.io</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 Alex Bubin. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/lightbox.js"></script>
+</body>
+</html>

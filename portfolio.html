@@ -11,66 +11,66 @@
       padding: 6rem 2rem 3rem;
       border-bottom: 1px solid var(--border);
     }
-    .shows-list {
-      padding: 0 2rem;
-    }
-    .show-entry {
-      border-bottom: 1px solid var(--border);
-      padding: 2.5rem 0;
-    }
-    .show-entry:last-child {
-      border-bottom: none;
-    }
-    .show-entry-header {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      margin-bottom: 1.5rem;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    .show-entry-title {
-      font-size: clamp(1.2rem, 3vw, 1.8rem);
-      font-weight: 800;
-      color: var(--white);
-      margin: 0 0 0.25rem;
-      letter-spacing: -0.02em;
-    }
-    .show-entry-meta {
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
-      color: var(--grey);
-      letter-spacing: 0.08em;
-    }
-    .show-entry-link {
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
-      color: var(--accent);
-      text-decoration: none;
-      letter-spacing: 0.08em;
-      white-space: nowrap;
-      transition: opacity 0.2s;
-    }
-    .show-entry-link:hover { opacity: 0.7; }
-    .show-thumb-grid {
+    .shows-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 0.4rem;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border-top: 1px solid var(--border);
     }
-    .show-thumb-grid .photo-item {
-      aspect-ratio: 3/2;
+    .show-card {
+      background: var(--bg);
+      display: block;
+      text-decoration: none;
+      position: relative;
+      aspect-ratio: 4/3;
+      overflow: hidden;
     }
-    .show-thumb-grid .photo-item img {
+    .show-card img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
+      transition: transform 0.4s ease;
     }
-    .show-thumb-span2 {
-      grid-column: span 2;
+    .show-card:hover img {
+      transform: scale(1.04);
     }
-    @media (max-width: 500px) {
-      .show-thumb-span2 { grid-column: span 1; }
+    .show-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.1) 50%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.5rem;
+    }
+    .show-card-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      margin: 0 0 0.25rem;
+      line-height: 1.2;
+    }
+    .show-card-meta {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.08em;
+    }
+    .show-card-arrow {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--accent);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .show-card:hover .show-card-arrow {
+      opacity: 1;
     }
   </style>
 </head>
@@ -93,175 +93,53 @@
     <h1 style="font-size: clamp(2.5rem, 6vw, 5rem);">Portfolio</h1>
   </header>
 
-  <!-- SHOWS -->
-  <div class="shows-list">
+  <!-- SHOW CARDS -->
+  <div class="shows-grid">
 
-    <!-- 924 Gilman — March 2026 -->
-    <div class="show-entry">
-      <div class="show-entry-header">
-        <div>
-          <h2 class="show-entry-title">Bad Time Records Tour 2026</h2>
-          <p class="show-entry-meta">924 Gilman &nbsp;/&nbsp; Berkeley, CA &nbsp;/&nbsp; March 16, 2026</p>
-          <p class="show-entry-meta" style="margin-top: 0.25rem;">Kill Lincoln &nbsp;· Bad Operation ·&nbsp; Half Past Two &nbsp;·&nbsp; Omnigone &nbsp;·&nbsp; Jer</p>
-        </div>
-        <a href="gilman-march-2026.html" class="show-entry-link">All Photos →</a>
+    <a href="gilman-march-2026.html" class="show-card">
+      <img src="images/web/kl-jump.jpg" alt="Bad Time Records Tour 2026">
+      <div class="show-card-overlay">
+        <h2 class="show-card-title">BTR Tour 2026</h2>
+        <p class="show-card-meta">924 Gilman &nbsp;/&nbsp; Mar 16, 2026 &nbsp;/&nbsp; 5 bands</p>
       </div>
-      <div class="show-thumb-grid">
-        <div class="photo-item show-thumb-span2" data-band="Kill Lincoln" data-show="924 Gilman / Mar 2026" data-index="0">
-          <img src="images/web/kl-jump.jpg" alt="Kill Lincoln at 924 Gilman, March 2026" loading="lazy">
-          <div class="photo-overlay"><span class="overlay-band">Kill Lincoln</span><span class="overlay-show">924 Gilman / Mar 2026</span></div>
-        </div>
-        <div class="photo-item" data-band="Bad Operation" data-show="924 Gilman / Mar 2026" data-index="1">
-          <img src="images/web/bo-ecstasy.jpg" alt="Bad Operation at 924 Gilman, March 2026" loading="lazy">
-          <div class="photo-overlay"><span class="overlay-band">Bad Operation</span><span class="overlay-show">924 Gilman / Mar 2026</span></div>
-        </div>
-        <div class="photo-item" data-band="Kill Lincoln" data-show="924 Gilman / Mar 2026" data-index="2">
-          <img src="images/web/kl-trombone-jump.jpg" alt="Kill Lincoln at 924 Gilman, March 2026" loading="lazy">
-          <div class="photo-overlay"><span class="overlay-band">Kill Lincoln</span><span class="overlay-show">924 Gilman / Mar 2026</span></div>
-        </div>
-        <div class="photo-item" data-band="Half Past Two" data-show="924 Gilman / Mar 2026" data-index="3">
-          <img src="images/web/hpt-crowd-surf.jpg" alt="Half Past Two at 924 Gilman, March 2026" loading="lazy">
-          <div class="photo-overlay"><span class="overlay-band">Half Past Two</span><span class="overlay-show">924 Gilman / Mar 2026</span></div>
-        </div>
-        <div class="photo-item" data-band="Omnigone" data-show="924 Gilman / Mar 2026" data-index="4">
-          <img src="images/web/omni-guitar.jpg" alt="Omnigone at 924 Gilman, March 2026" loading="lazy">
-          <div class="photo-overlay"><span class="overlay-band">Omnigone</span><span class="overlay-show">924 Gilman / Mar 2026</span></div>
-        </div>
-        <div class="photo-item" data-band="Jer" data-show="924 Gilman / Mar 2026" data-index="5">
-          <img src="images/web/jer-frontman.jpg" alt="Jer at 924 Gilman, March 2026" loading="lazy">
-          <div class="photo-overlay"><span class="overlay-band">Jer</span><span class="overlay-show">924 Gilman / Mar 2026</span></div>
-        </div>
-      </div>
-    </div>
+      <span class="show-card-arrow">View →</span>
+    </a>
 
-    <!-- Streetlight Manifesto — Regency Jul 2025 -->
-    <div class="show-entry">
-      <div class="show-entry-header">
-        <div>
-          <h2 class="show-entry-title">Streetlight Manifesto</h2>
-          <p class="show-entry-meta">The Regency &nbsp;/&nbsp; San Francisco, CA &nbsp;/&nbsp; July 25, 2025</p>
-        </div>
+    <a href="fest-23.html" class="show-card">
+      <img src="images/web/fest23-tsunami-bomb-1.jpg" alt="Fest 23">
+      <div class="show-card-overlay">
+        <h2 class="show-card-title">Fest 23</h2>
+        <p class="show-card-meta">Gainesville, FL &nbsp;/&nbsp; Nov 2024 &nbsp;/&nbsp; 10 bands</p>
       </div>
-      <div class="show-thumb-grid">
-        <div class="photo-item show-thumb-span2" data-band="Streetlight Manifesto" data-show="The Regency / Jul 2025" data-index="6">
-          <img src="images/web/sm-1.jpg" alt="Streetlight Manifesto at The Regency, July 2025" loading="lazy">
-          <div class="photo-overlay"><span class="overlay-band">Streetlight Manifesto</span><span class="overlay-show">The Regency / Jul 2025</span></div>
-        </div>
-        <div class="photo-item" data-band="Streetlight Manifesto" data-show="The Regency / Jul 2025" data-index="7">
-          <img src="images/web/sm-3.jpg" alt="Streetlight Manifesto at The Regency, July 2025" loading="lazy">
-          <div class="photo-overlay"><span class="overlay-band">Streetlight Manifesto</span><span class="overlay-show">The Regency / Jul 2025</span></div>
-        </div>
-      </div>
-    </div>
+      <span class="show-card-arrow">View →</span>
+    </a>
 
-    <!-- Omnigone — Bottom of the Hill Dec 2025 -->
-    <div class="show-entry">
-      <div class="show-entry-header">
-        <div>
-          <h2 class="show-entry-title">Omnigone</h2>
-          <p class="show-entry-meta">Bottom of the Hill &nbsp;/&nbsp; San Francisco, CA &nbsp;/&nbsp; December 11, 2025</p>
-        </div>
+    <a href="streetlight-manifesto-jul-2025.html" class="show-card">
+      <img src="images/web/sm-1.jpg" alt="Streetlight Manifesto">
+      <div class="show-card-overlay">
+        <h2 class="show-card-title">Streetlight Manifesto</h2>
+        <p class="show-card-meta">The Regency &nbsp;/&nbsp; Jul 25, 2025</p>
       </div>
-      <div class="show-thumb-grid">
-        <div class="photo-item show-thumb-span2" data-band="Omnigone" data-show="Bottom of the Hill / Dec 2025" data-index="8">
-          <img src="images/web/omni-dec-1.jpg" alt="Omnigone at Bottom of the Hill, December 2025" loading="lazy">
-          <div class="photo-overlay"><span class="overlay-band">Omnigone</span><span class="overlay-show">Bottom of the Hill / Dec 2025</span></div>
-        </div>
-      </div>
-    </div>
+      <span class="show-card-arrow">View →</span>
+    </a>
 
-    <!-- Less Than Jake — Catalyst Oct 2024 -->
-    <div class="show-entry">
-      <div class="show-entry-header">
-        <div>
-          <h2 class="show-entry-title">Less Than Jake</h2>
-          <p class="show-entry-meta">The Catalyst &nbsp;/&nbsp; Santa Cruz, CA &nbsp;/&nbsp; October 15, 2024</p>
-        </div>
+    <a href="less-than-jake-oct-2024.html" class="show-card">
+      <img src="images/web/ltj-1.jpg" alt="Less Than Jake">
+      <div class="show-card-overlay">
+        <h2 class="show-card-title">Less Than Jake</h2>
+        <p class="show-card-meta">The Catalyst &nbsp;/&nbsp; Oct 15, 2024</p>
       </div>
-      <div class="show-thumb-grid">
-        <div class="photo-item show-thumb-span2" data-band="Less Than Jake" data-show="The Catalyst / Oct 2024" data-index="9">
-          <img src="images/web/ltj-1.jpg" alt="Less Than Jake at The Catalyst, October 2024" loading="lazy">
-          <div class="photo-overlay"><span class="overlay-band">Less Than Jake</span><span class="overlay-show">The Catalyst / Oct 2024</span></div>
-        </div>
-        <div class="photo-item" data-band="Less Than Jake" data-show="The Catalyst / Oct 2024" data-index="10">
-          <img src="images/web/ltj-2.jpg" alt="Less Than Jake at The Catalyst, October 2024" loading="lazy">
-          <div class="photo-overlay"><span class="overlay-band">Less Than Jake</span><span class="overlay-show">The Catalyst / Oct 2024</span></div>
-        </div>
-        <div class="photo-item" data-band="Less Than Jake" data-show="The Catalyst / Oct 2024" data-index="11">
-          <img src="images/web/ltj-3.jpg" alt="Less Than Jake at The Catalyst, October 2024" loading="lazy">
-          <div class="photo-overlay"><span class="overlay-band">Less Than Jake</span><span class="overlay-show">The Catalyst / Oct 2024</span></div>
-        </div>
-      </div>
-    </div>
+      <span class="show-card-arrow">View →</span>
+    </a>
 
-    <!-- Fest 23 -->
-    <div class="show-entry">
-      <div class="show-entry-header">
-        <div>
-          <h2 class="show-entry-title">Fest 23</h2>
-          <p class="show-entry-meta">Various Venues &nbsp;/&nbsp; Gainesville, FL &nbsp;/&nbsp; October / November 2024</p>
-          <p class="show-entry-meta" style="margin-top: 0.25rem;">Tsunami Bomb &nbsp;·&nbsp; Catch 22 &nbsp;·&nbsp; Link 80 &nbsp;·&nbsp; Hans Gruber &amp; the Die Hards &nbsp;·&nbsp; Jer &nbsp;·&nbsp; Joystick &nbsp;·&nbsp; Half Past Two &nbsp;·&nbsp; Flying Raccoon Suit &nbsp;·&nbsp; Chris Farren &nbsp;·&nbsp; Devon Kay &amp; the Solutions</p>
-        </div>
+    <a href="omnigone-dec-2025.html" class="show-card">
+      <img src="images/web/omni-dec-1.jpg" alt="Omnigone">
+      <div class="show-card-overlay">
+        <h2 class="show-card-title">Omnigone</h2>
+        <p class="show-card-meta">Bottom of the Hill &nbsp;/&nbsp; Dec 11, 2025</p>
       </div>
-      <div class="show-thumb-grid">
-        <div class="photo-item show-thumb-span2" data-band="Tsunami Bomb" data-show="Fest 23 / Nov 2024" data-index="12">
-          <img src="images/web/fest23-tsunami-bomb-1.jpg" alt="Tsunami Bomb at Fest 23" loading="lazy">
-          <div class="photo-overlay"><span class="overlay-band">Tsunami Bomb</span><span class="overlay-show">Fest 23 / Nov 2024</span></div>
-        </div>
-        <div class="photo-item" data-band="Tsunami Bomb" data-show="Fest 23 / Nov 2024" data-index="13">
-          <img src="images/web/fest23-tsunami-bomb-2.jpg" alt="Tsunami Bomb at Fest 23" loading="lazy">
-          <div class="photo-overlay"><span class="overlay-band">Tsunami Bomb</span><span class="overlay-show">Fest 23 / Nov 2024</span></div>
-        </div>
-        <div class="photo-item" data-band="Catch 22" data-show="Fest 23 / Nov 2024" data-index="14">
-          <img src="images/web/fest23-catch22-1.jpg" alt="Catch 22 at Fest 23" loading="lazy">
-          <div class="photo-overlay"><span class="overlay-band">Catch 22</span><span class="overlay-show">Fest 23 / Nov 2024</span></div>
-        </div>
-        <div class="photo-item" data-band="Catch 22" data-show="Fest 23 / Nov 2024" data-index="15">
-          <img src="images/web/fest23-catch22-2.jpg" alt="Catch 22 at Fest 23" loading="lazy">
-          <div class="photo-overlay"><span class="overlay-band">Catch 22</span><span class="overlay-show">Fest 23 / Nov 2024</span></div>
-        </div>
-        <div class="photo-item" data-band="Link 80" data-show="Fest 23 / Nov 2024" data-index="16">
-          <img src="images/web/fest23-link80-1.jpg" alt="Link 80 at Fest 23" loading="lazy">
-          <div class="photo-overlay"><span class="overlay-band">Link 80</span><span class="overlay-show">Fest 23 / Nov 2024</span></div>
-        </div>
-        <div class="photo-item" data-band="Link 80" data-show="Fest 23 / Nov 2024" data-index="17">
-          <img src="images/web/fest23-link80-2.jpg" alt="Link 80 at Fest 23" loading="lazy">
-          <div class="photo-overlay"><span class="overlay-band">Link 80</span><span class="overlay-show">Fest 23 / Nov 2024</span></div>
-        </div>
-        <div class="photo-item" data-band="Hans Gruber & the Die Hards" data-show="Fest 23 / Nov 2024" data-index="18">
-          <img src="images/web/fest23-hans-gruber-1.jpg" alt="Hans Gruber and the Die Hards at Fest 23" loading="lazy">
-          <div class="photo-overlay"><span class="overlay-band">Hans Gruber &amp; the Die Hards</span><span class="overlay-show">Fest 23 / Nov 2024</span></div>
-        </div>
-        <div class="photo-item" data-band="Jer" data-show="Fest 23 / Nov 2024" data-index="19">
-          <img src="images/web/fest23-jer-1.jpg" alt="Jer at Fest 23" loading="lazy">
-          <div class="photo-overlay"><span class="overlay-band">Jer</span><span class="overlay-show">Fest 23 / Nov 2024</span></div>
-        </div>
-        <div class="photo-item" data-band="Joystick" data-show="Fest 23 / Nov 2024" data-index="20">
-          <img src="images/web/fest23-joystick-1.jpg" alt="Joystick at Fest 23" loading="lazy">
-          <div class="photo-overlay"><span class="overlay-band">Joystick</span><span class="overlay-show">Fest 23 / Nov 2024</span></div>
-        </div>
-        <div class="photo-item" data-band="Half Past Two" data-show="Fest 23 / Nov 2024" data-index="21">
-          <img src="images/web/fest23-hpt-1.jpg" alt="Half Past Two at Fest 23" loading="lazy">
-          <div class="photo-overlay"><span class="overlay-band">Half Past Two</span><span class="overlay-show">Fest 23 / Nov 2024</span></div>
-        </div>
-        <div class="photo-item" data-band="Flying Raccoon Suit" data-show="Fest 23 / Nov 2024" data-index="22">
-          <img src="images/web/fest23-flying-raccoon-1.jpg" alt="Flying Raccoon Suit at Fest 23" loading="lazy">
-          <div class="photo-overlay"><span class="overlay-band">Flying Raccoon Suit</span><span class="overlay-show">Fest 23 / Nov 2024</span></div>
-        </div>
-        <div class="photo-item" data-band="Chris Farren" data-show="Fest 23 / Nov 2024" data-index="23">
-          <img src="images/web/fest23-chris-farren-1.jpg" alt="Chris Farren at Fest 23" loading="lazy">
-          <div class="photo-overlay"><span class="overlay-band">Chris Farren</span><span class="overlay-show">Fest 23 / Nov 2024</span></div>
-        </div>
-        <div class="photo-item" data-band="Devon Kay & the Solutions" data-show="Fest 23 / Nov 2024" data-index="24">
-          <img src="images/web/fest23-devon-kay-1.jpg" alt="Devon Kay and the Solutions at Fest 23" loading="lazy">
-          <div class="photo-overlay"><span class="overlay-band">Devon Kay &amp; the Solutions</span><span class="overlay-show">Fest 23 / Nov 2024</span></div>
-        </div>
-        <div class="photo-item" data-band="Hans Gruber & the Die Hards" data-show="Fest 23 / Nov 2024" data-index="25">
-          <img src="images/web/fest23-hans-gruber-2.jpg" alt="Hans Gruber and the Die Hards at Fest 23" loading="lazy">
-          <div class="photo-overlay"><span class="overlay-band">Hans Gruber &amp; the Die Hards</span><span class="overlay-show">Fest 23 / Nov 2024</span></div>
-        </div>
-      </div>
-    </div>
+      <span class="show-card-arrow">View →</span>
+    </a>
 
   </div>
 
@@ -286,6 +164,5 @@
   </footer>
 
   <script src="js/nav.js"></script>
-  <script src="js/lightbox.js"></script>
 </body>
 </html>
