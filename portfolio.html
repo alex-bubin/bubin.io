@@ -11,66 +11,57 @@
       padding: 6rem 2rem 3rem;
       border-bottom: 1px solid var(--border);
     }
-    .shows-grid {
+    .photo-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1px;
-      background: var(--border);
-      border-top: 1px solid var(--border);
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      padding: 0;
     }
-    .show-card {
-      background: var(--bg);
-      display: block;
-      text-decoration: none;
-      position: relative;
-      aspect-ratio: 4/3;
+    .photo-item {
+      aspect-ratio: 3/2;
       overflow: hidden;
+      position: relative;
+      cursor: pointer;
     }
-    .show-card img {
+    .photo-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
-      transition: transform 0.4s ease;
+      transition: transform 0.3s ease;
     }
-    .show-card:hover img {
-      transform: scale(1.04);
+    .photo-item:hover img {
+      transform: scale(1.05);
     }
-    .show-card-overlay {
+    .photo-overlay {
       position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.1) 50%, transparent 100%);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 1.5rem;
-    }
-    .show-card-title {
-      font-size: 1.2rem;
-      font-weight: 800;
-      color: var(--white);
-      letter-spacing: -0.02em;
-      margin: 0 0 0.25rem;
-      line-height: 1.2;
-    }
-    .show-card-meta {
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      color: rgba(255,255,255,0.6);
-      letter-spacing: 0.08em;
-    }
-    .show-card-arrow {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      color: var(--accent);
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.75));
+      padding: 2rem 1rem 0.75rem;
       opacity: 0;
-      transition: opacity 0.2s;
+      transition: opacity 0.3s ease;
     }
-    .show-card:hover .show-card-arrow {
+    .photo-item:hover .photo-overlay {
       opacity: 1;
+    }
+    .overlay-band {
+      color: #fff;
+      font-weight: 600;
+      margin: 0 0 0.2rem;
+      display: block;
+    }
+    .overlay-meta {
+      color: rgba(255,255,255,0.8);
+      font-size: 0.85rem;
+      margin: 0;
+      display: block;
+    }
+    @media (max-width: 768px) {
+      .photo-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .photo-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -89,57 +80,432 @@
 
   <!-- PAGE HEADER -->
   <header class="portfolio-hero">
-    <p class="hero-eyebrow">All Shows</p>
+    <p class="hero-eyebrow">All Photos</p>
     <h1 style="font-size: clamp(2.5rem, 6vw, 5rem);">Portfolio</h1>
   </header>
 
-  <!-- SHOW CARDS -->
-  <div class="shows-grid">
+  <!-- PHOTO GRID -->
+  <div class="photo-grid">
 
-    <a href="gilman-march-2026.html" class="show-card">
-      <img src="images/web/kl-jump.jpg" alt="Bad Time Records Tour 2026">
-      <div class="show-card-overlay">
-        <h2 class="show-card-title">BTR Tour 2026</h2>
-        <p class="show-card-meta">924 Gilman &nbsp;/&nbsp; Mar 16, 2026 &nbsp;/&nbsp; 5 bands</p>
+    <div class="photo-item">
+      <img src="images/portfolio/_dsc7406.jpg" alt="Kill Lincoln at 924 Gilman" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Kill Lincoln</span>
+        <span class="overlay-meta">924 Gilman · March 16</span>
       </div>
-      <span class="show-card-arrow">View →</span>
-    </a>
+    </div>
 
-    <a href="fest-23.html" class="show-card">
-      <img src="images/web/fest23-tsunami-bomb-1.jpg" alt="Fest 23">
-      <div class="show-card-overlay">
-        <h2 class="show-card-title">Fest 23</h2>
-        <p class="show-card-meta">Gainesville, FL &nbsp;/&nbsp; Nov 2024 &nbsp;/&nbsp; 10 bands</p>
+    <div class="photo-item">
+      <img src="images/portfolio/_dsc8808.jpg" alt="Illuminati Hotties" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Illuminati Hotties</span>
+        <span class="overlay-meta">Bottom of the Hill · Feb 28</span>
       </div>
-      <span class="show-card-arrow">View →</span>
-    </a>
+    </div>
 
-    <a href="streetlight-manifesto-jul-2025.html" class="show-card">
-      <img src="images/web/sm-1.jpg" alt="Streetlight Manifesto">
-      <div class="show-card-overlay">
-        <h2 class="show-card-title">Streetlight Manifesto</h2>
-        <p class="show-card-meta">The Regency &nbsp;/&nbsp; Jul 25, 2025</p>
+    <div class="photo-item">
+      <img src="images/portfolio/img_5551.jpg" alt="Streetlight Manifesto at The Regency" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Streetlight Manifesto</span>
+        <span class="overlay-meta">The Regency · July 25</span>
       </div>
-      <span class="show-card-arrow">View →</span>
-    </a>
+    </div>
 
-    <a href="less-than-jake-oct-2024.html" class="show-card">
-      <img src="images/web/ltj-1.jpg" alt="Less Than Jake">
-      <div class="show-card-overlay">
-        <h2 class="show-card-title">Less Than Jake</h2>
-        <p class="show-card-meta">The Catalyst &nbsp;/&nbsp; Oct 15, 2024</p>
+    <div class="photo-item">
+      <img src="images/portfolio/_dsc9369.jpg" alt="Bad Operation at 924 Gilman" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Bad Operation</span>
+        <span class="overlay-meta">924 Gilman · March 16</span>
       </div>
-      <span class="show-card-arrow">View →</span>
-    </a>
+    </div>
 
-    <a href="omnigone-dec-2025.html" class="show-card">
-      <img src="images/web/omni-dec-1.jpg" alt="Omnigone">
-      <div class="show-card-overlay">
-        <h2 class="show-card-title">Omnigone</h2>
-        <p class="show-card-meta">Bottom of the Hill &nbsp;/&nbsp; Dec 11, 2025</p>
+    <div class="photo-item">
+      <img src="images/portfolio/img_4954.jpg" alt="Half Past Two at Fest 23" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Half Past Two</span>
+        <span class="overlay-meta">Fest 23 · Day 3</span>
       </div>
-      <span class="show-card-arrow">View →</span>
-    </a>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/_dsc0721.jpg" alt="Jer at 924 Gilman" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Jer</span>
+        <span class="overlay-meta">924 Gilman · March 16</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/img_2476.jpg" alt="Streetlight Manifesto at The Regency" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Streetlight Manifesto</span>
+        <span class="overlay-meta">The Regency · Aug 24</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/_dsc3473.jpg" alt="Crazy the Brains at Stork Club" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Crazy the Brains</span>
+        <span class="overlay-meta">Stork Club · March 5</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/img_7474.jpg" alt="Jer at Fest 23" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Jer</span>
+        <span class="overlay-meta">Fest 23 · Day 3</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/_dsc5881.jpg" alt="Omnigone at 924 Gilman" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Omnigone</span>
+        <span class="overlay-meta">924 Gilman · March 16</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/img_2709.jpg" alt="Suicide Machines at Cornerstone" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Suicide Machines</span>
+        <span class="overlay-meta">Cornerstone · Nov 7</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/img_8954.jpg" alt="Too Many Zooz at The Independent" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Too Many Zooz</span>
+        <span class="overlay-meta">The Independent · May 16</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/_dsc7671.jpg" alt="Kill Lincoln at 924 Gilman" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Kill Lincoln</span>
+        <span class="overlay-meta">924 Gilman · March 16</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/_dsc2846.jpg" alt="Hans Gruber at Stork Club" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Hans Gruber</span>
+        <span class="overlay-meta">Stork Club · March 5</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/img_3581.jpg" alt="Less Than Jake at The Regency" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Less Than Jake</span>
+        <span class="overlay-meta">The Regency · Aug 2</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/_dsc6509.jpg" alt="Half Past Two at 924 Gilman" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Half Past Two</span>
+        <span class="overlay-meta">924 Gilman · March 16</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/img_1302.jpg" alt="Dollar Signs at Fest 23" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Dollar Signs</span>
+        <span class="overlay-meta">Fest 23 · Day 1</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/_dsc9470.jpg" alt="Illuminati Hotties" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Illuminati Hotties</span>
+        <span class="overlay-meta">Bottom of the Hill · Feb 28</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/_dsc4579.jpg" alt="Memo Notebooks at Black &amp; Brown" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Memo Notebooks</span>
+        <span class="overlay-meta">Black &amp; Brown · Feb 27</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/img_2616.jpg" alt="Hey Smith at 924 Gilman" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Hey Smith</span>
+        <span class="overlay-meta">924 Gilman · Sep 2</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/_dsc8566.jpg" alt="Kill Lincoln at 924 Gilman" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Kill Lincoln</span>
+        <span class="overlay-meta">924 Gilman · March 16</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/_dsc3114.jpg" alt="Loitering at Black &amp; Brown" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Loitering</span>
+        <span class="overlay-meta">Black &amp; Brown · Feb 27</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/img_7493.jpg" alt="Jer at Fest 23" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Jer</span>
+        <span class="overlay-meta">Fest 23 · Day 3</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/_dsc1027.jpg" alt="Jer at 924 Gilman" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Jer</span>
+        <span class="overlay-meta">924 Gilman · March 16</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/img_4867.jpg" alt="Sweet Gloom at The Regency" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Sweet Gloom</span>
+        <span class="overlay-meta">The Regency · July 25</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/_dsc6142.jpg" alt="Omnigone at 924 Gilman" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Omnigone</span>
+        <span class="overlay-meta">924 Gilman · March 16</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/_dsc7029.jpg" alt="Casino Youth at 924 Gilman" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Casino Youth</span>
+        <span class="overlay-meta">924 Gilman · Feb 20</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/img_4184.jpg" alt="Streetlight Manifesto at The Regency" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Streetlight Manifesto</span>
+        <span class="overlay-meta">The Regency · Aug 24</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/_dsc0230.jpg" alt="Last Thread at Stork Club" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Last Thread</span>
+        <span class="overlay-meta">Stork Club · March 5</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/img_8992.jpg" alt="Caitlin Edwards at 924 Gilman" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Caitlin Edwards</span>
+        <span class="overlay-meta">924 Gilman · Aug 31</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/_dsc9664.jpg" alt="Bad Operation at 924 Gilman" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Bad Operation</span>
+        <span class="overlay-meta">924 Gilman · March 16</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/_dsc1243.jpg" alt="Jer at 924 Gilman" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Jer</span>
+        <span class="overlay-meta">924 Gilman · March 16</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/img_5728.jpg" alt="Streetlight Manifesto at The Regency" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Streetlight Manifesto</span>
+        <span class="overlay-meta">The Regency · July 25</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/_dsc3320.jpg" alt="Loitering at Black &amp; Brown" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Loitering</span>
+        <span class="overlay-meta">Black &amp; Brown · Feb 27</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/img_2044.jpg" alt="Harbor Boys at Cornerstone" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Harbor Boys</span>
+        <span class="overlay-meta">Cornerstone · Feb 27</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/_dsc2975.jpg" alt="Hans Gruber at Stork Club" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Hans Gruber</span>
+        <span class="overlay-meta">Stork Club · March 5</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/img_9148.jpg" alt="Too Many Zooz at The Independent" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Too Many Zooz</span>
+        <span class="overlay-meta">The Independent · May 16</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/_dsc1547.jpg" alt="Jer at 924 Gilman" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Jer</span>
+        <span class="overlay-meta">924 Gilman · March 16</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/img_1589.jpg" alt="Dollar Signs at Fest 23" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Dollar Signs</span>
+        <span class="overlay-meta">Fest 23 · Day 1</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/_dsc8703.jpg" alt="Kill Lincoln at 924 Gilman" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Kill Lincoln</span>
+        <span class="overlay-meta">924 Gilman · March 16</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/_dsc5127.jpg" alt="Memo Notebooks at Black &amp; Brown" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Memo Notebooks</span>
+        <span class="overlay-meta">Black &amp; Brown · Feb 27</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/_dsc3035.jpg" alt="Hans Gruber at Stork Club" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Hans Gruber</span>
+        <span class="overlay-meta">Stork Club · March 5</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/img_8050.jpg" alt="Build Us Airplanes at 924 Gilman" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Build Us Airplanes</span>
+        <span class="overlay-meta">924 Gilman · Aug 1</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/_dsc6608.jpg" alt="Half Past Two at 924 Gilman" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Half Past Two</span>
+        <span class="overlay-meta">924 Gilman · March 16</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/_dsc1137.jpg" alt="High Brow at Black &amp; Brown" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">High Brow</span>
+        <span class="overlay-meta">Black &amp; Brown · Feb 27</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/img_9159.jpg" alt="Caitlin Edwards at 924 Gilman" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Caitlin Edwards</span>
+        <span class="overlay-meta">924 Gilman · Aug 31</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/img_4517.jpg" alt="Ceschi at Fest" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Ceschi</span>
+        <span class="overlay-meta">Fest · Day 2</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/_dsc7489.jpg" alt="Kill Lincoln at 924 Gilman" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Kill Lincoln</span>
+        <span class="overlay-meta">924 Gilman · March 16</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/img_5800.jpg" alt="Streetlight Manifesto at The Regency" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Streetlight Manifesto</span>
+        <span class="overlay-meta">The Regency · July 25</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/img_5819.jpg" alt="Streetlight Manifesto at The Regency" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Streetlight Manifesto</span>
+        <span class="overlay-meta">The Regency · July 25</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/img_6670.jpg" alt="Streetlight Manifesto at The Regency" loading="lazy">
+      <div class="photo-overlay">
+        <span class="overlay-band">Streetlight Manifesto</span>
+        <span class="overlay-meta">The Regency · July 25</span>
+      </div>
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/img_1161.jpg" alt="Concert photo" loading="lazy">
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/img_1961.jpg" alt="Concert photo" loading="lazy">
+    </div>
+
+    <div class="photo-item">
+      <img src="images/portfolio/_dsc9774.jpg" alt="Concert photo" loading="lazy">
+    </div>
 
   </div>
 
