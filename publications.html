@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Publications by Alex Bubin | Off The Record - a concert photography book covering Bay Area punk, ska, and emo shows in 2025.">
+  <title>Publications | Alex Bubin</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .book-layout {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 4rem;
+      align-items: start;
+      margin-top: 2rem;
+    }
+    @media (max-width: 768px) {
+      .book-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .book-cover { max-width: 280px; }
+    }
+    .book-cover {
+      position: sticky;
+      top: 6rem;
+    }
+    .book-cover img {
+      width: 100%;
+      border-radius: 4px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+      display: block;
+    }
+    .book-cover-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--grey);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 1rem;
+      text-align: center;
+    }
+    .book-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin: 2rem 0;
+      padding: 1.5rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .book-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .book-meta-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--grey);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .book-meta-value {
+      font-size: 1rem;
+      color: var(--offwhite);
+      font-weight: 500;
+    }
+    .book-price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+    .btn-buy {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--bg);
+      padding: 0.85rem 2rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: opacity 0.2s;
+      margin-top: 1.5rem;
+    }
+    .btn-buy:hover { opacity: 0.85; }
+    .book-blurb {
+      color: var(--offwhite);
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="index.html"><span class="nav-name-first">Alex</span> <span class="nav-name-last">Bubin</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Work</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="licensing.html">Licensing</a></li>
+      <li><a href="publications.html" class="active">Publications</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="hero" style="padding-bottom: 3rem;">
+    <p class="hero-eyebrow">In Print</p>
+    <h1 style="font-size: clamp(2.5rem, 6vw, 5rem);">Publications</h1>
+  </header>
+
+  <!-- BOOK -->
+  <section>
+    <p class="section-label">Book</p>
+    <h2 class="section-title">Off The Record</h2>
+
+    <div class="book-layout">
+
+      <div class="book-cover">
+        <img
+          src="https://assets.lulu.com/cover_thumbs/q/6/q6dd7gm-front-shortedge-384.jpg"
+          alt="Off The Record - 2025 by Alex Bubin, cover"
+        >
+        <p class="book-cover-label">Off The Record — 2025</p>
+      </div>
+
+      <div class="book-info">
+        <p class="book-blurb">
+          A year of shows documented in 70 pages of full-color concert photography.
+          Punk, ska, and emo bands across the Bay Area — captured at 924 Gilman,
+          Fest 23, and DIY venues where the music actually lives.
+        </p>
+        <p class="book-blurb">
+          Bands featured include Streetlight Manifesto, Less Than Jake, Bad Operation,
+          Omnigone, Half Past Two, and more. Shot on a Sony a7 V. No fluff, no filler —
+          just the photos.
+        </p>
+
+        <div class="book-meta">
+          <div class="book-meta-item">
+            <span class="book-meta-label">Format</span>
+            <span class="book-meta-value">Hardcover</span>
+          </div>
+          <div class="book-meta-item">
+            <span class="book-meta-label">Pages</span>
+            <span class="book-meta-value">70</span>
+          </div>
+          <div class="book-meta-item">
+            <span class="book-meta-label">Size</span>
+            <span class="book-meta-value">A4 Landscape</span>
+          </div>
+          <div class="book-meta-item">
+            <span class="book-meta-label">Interior</span>
+            <span class="book-meta-value">Full Color</span>
+          </div>
+          <div class="book-meta-item">
+            <span class="book-meta-label">Ships In</span>
+            <span class="book-meta-value">3–5 days</span>
+          </div>
+          <div class="book-meta-item">
+            <span class="book-meta-label">Price</span>
+            <span class="book-meta-value book-price">$40</span>
+          </div>
+        </div>
+
+        <a
+          href="https://www.lulu.com/shop/alex-bubin/off-the-record-2025-hardcover/hardcover/product-q6dd7gm.html"
+          class="btn-buy"
+          target="_blank"
+          rel="noopener"
+        >Order on Lulu →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider" style="margin: 0 2rem;">
+
+  <!-- MORE COMING -->
+  <section>
+    <p class="section-label">What's Next</p>
+    <h2 class="section-title">More On The Way</h2>
+    <div style="max-width: 640px;">
+      <p style="color: var(--offwhite); line-height: 1.8; margin-bottom: 1.5rem;">
+        Another year, another book. I shoot constantly — there's always more in the archive.
+        If you want to know when the next one drops, follow on Instagram or check back here.
+      </p>
+      <a href="https://www.instagram.com/eyelickss" target="_blank" rel="noopener" class="btn btn-outline">@eyelickss</a>
+    </div>
+  </section>
+
+  <hr class="divider" style="margin: 0 2rem;">
+
+  <!-- PRESS USE -->
+  <section>
+    <p class="section-label">Press & Editorial</p>
+    <h2 class="section-title">Use These Photos</h2>
+    <div style="max-width: 640px;">
+      <p style="color: var(--offwhite); line-height: 1.8; margin-bottom: 1.5rem;">
+        Need concert photography for a publication, blog, or music press piece?
+        Editorial licenses start at $75. Drop an email and I'll respond fast.
+      </p>
+      <a href="licensing.html" class="btn">View Licensing</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-logo"><span class="nav-name-first">Alex</span> <span class="nav-name-last">Bubin</span></span>
+      <nav>
+        <ul class="footer-links">
+          <li><a href="index.html">Work</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="licensing.html">Licensing</a></li>
+          <li><a href="publications.html">Publications</a></li>
+        </ul>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/eyelickss" target="_blank" rel="noopener">@eyelickss</a>
+        <a href="mailto:photos@bubin.io">photos@bubin.io</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 Alex Bubin. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+</body>
+</html>
