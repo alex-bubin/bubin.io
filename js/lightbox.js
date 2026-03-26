@@ -214,8 +214,8 @@
       photos.push({
         src: img ? img.src : '',
         alt: img ? (img.alt || '') : '',
-        band: item.dataset.band || '',
-        show: item.dataset.show || '',
+        band: item.dataset.band || (item.querySelector('.overlay-band') || {}).textContent || '',
+        show: item.dataset.show || (item.querySelector('.overlay-meta') || {}).textContent || '',
       });
 
       item.style.cursor = 'pointer';
