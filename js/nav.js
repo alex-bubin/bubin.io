@@ -15,3 +15,23 @@
     }
   });
 })();
+
+// Mobile hamburger toggle
+(function () {
+  var toggle = document.querySelector('.nav-toggle');
+  var navLinks = document.querySelector('.nav-links');
+  if (!toggle || !navLinks) return;
+
+  toggle.addEventListener('click', function () {
+    toggle.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+
+  // Close menu when a link is tapped
+  navLinks.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      toggle.classList.remove('open');
+      navLinks.classList.remove('open');
+    });
+  });
+})();

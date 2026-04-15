@@ -866,20 +866,87 @@ footer {
 .mono { font-family: var(--font-mono); }
 
 /* ============================================
+   HAMBURGER TOGGLE
+   ============================================ */
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 110;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--white);
+  margin: 5px 0;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.nav-toggle.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ============================================
    RESPONSIVE
    ============================================ */
 
 @media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
   nav {
     padding: 0 1rem;
   }
 
   .nav-links {
-    gap: 1.25rem;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--darker);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 99;
+  }
+
+  .nav-links.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
   }
 
   .hero {
     padding: 4rem 1.25rem 3.5rem;
+  }
+
+  .hero-bg {
+    min-height: 60vh;
+    padding: 5rem 1.25rem 4rem;
   }
 
   section {
@@ -909,6 +976,11 @@ footer {
     align-items: flex-start;
   }
 
+  .footer-links {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
   .btn-outline {
     margin-left: 0;
     margin-top: 0.75rem;
@@ -928,7 +1000,7 @@ footer {
 
 @media (max-width: 480px) {
   .photo-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 
   .about-stats {
