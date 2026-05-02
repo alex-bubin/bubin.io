@@ -28,7 +28,6 @@
       <div id="lb-content">
         <div id="lb-img-wrap" style="position:relative;display:inline-block;">
           <img id="lb-img" src="" alt="">
-          <span id="lb-watermark">@eyelickss</span>
         </div>
         <div id="lb-meta">
           <span id="lb-band"></span>
@@ -96,19 +95,7 @@
         color: #888880;
         font-size: 0.65rem;
       }
-      #lb-watermark {
-        position: absolute;
-        bottom: 0.6rem;
-        right: 0.75rem;
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 0.7rem;
-        letter-spacing: 0.12em;
-        color: rgba(255, 255, 255, 0.35);
-        pointer-events: none;
-        user-select: none;
-        text-shadow: 0 1px 3px rgba(0,0,0,0.8);
-      }
-      #lb-close {
+#lb-close {
         position: absolute;
         top: 1rem;
         right: 1.25rem;
