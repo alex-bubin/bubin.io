@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Publications by Alex Bubin | Off The Record - a concert photography book covering Bay Area punk, ska, and emo shows in 2025.">
-  <title>Publications | Alex Bubin</title>
+  <meta name="description" content="Shop | Alex Bubin - prints, books, and zines from a year of Bay Area punk, ska, and emo concert photography.">
+  <title>Shop | Alex Bubin</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
     .book-layout {
@@ -14,13 +14,13 @@
       align-items: start;
       margin-top: 2rem;
     }
-    @media (max-width: 768px) {
-      .book-layout { grid-template-columns: 1fr; gap: 2rem; }
-      .book-cover { max-width: 280px; }
-    }
     .book-cover {
       position: sticky;
       top: 6rem;
+    }
+    @media (max-width: 768px) {
+      .book-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .book-cover { max-width: 280px; position: static; }
     }
     .book-cover img {
       width: 100%;
@@ -69,26 +69,16 @@
       color: var(--white);
       letter-spacing: -0.02em;
     }
-    .btn-buy {
-      display: inline-block;
-      background: var(--accent);
-      color: var(--black);
-      padding: 0.85rem 2rem;
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border-radius: 2px;
-      transition: opacity 0.2s;
-      margin-top: 1.5rem;
-    }
-    .btn-buy:hover { opacity: 0.85; }
     .book-blurb {
       color: var(--offwhite);
       line-height: 1.8;
       margin-bottom: 1.25rem;
     }
+    .buy-button-wrap {
+      margin-top: 1.5rem;
+      min-height: 50px;
+    }
+    .buy-button-wrap .shopify-buy__btn-wrapper { margin: 0; }
   </style>
 </head>
 <body>
@@ -103,14 +93,14 @@
       <li><a href="bands.html">Bands</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="licensing.html">Licensing</a></li>
-      <li><a href="publications.html" class="active">Publications</a></li>
+      <li><a href="shop.html" class="active">Shop</a></li>
     </ul>
   </nav>
 
   <!-- PAGE HEADER -->
   <header class="hero" style="padding-bottom: 3rem;">
-    <p class="hero-eyebrow">In Print</p>
-    <h1 style="font-size: clamp(2.5rem, 6vw, 5rem);">Publications</h1>
+    <p class="hero-eyebrow">Books & Prints</p>
+    <h1 style="font-size: clamp(2.5rem, 6vw, 5rem);">Shop</h1>
   </header>
 
   <!-- BOOK -->
@@ -125,19 +115,19 @@
           src="https://assets.lulu.com/cover_thumbs/q/6/q6dd7gm-front-shortedge-384.jpg"
           alt="Off The Record - 2025 by Alex Bubin, cover"
         >
-        <p class="book-cover-label">Off The Record — 2025</p>
+        <p class="book-cover-label">Off The Record 2025</p>
       </div>
 
       <div class="book-info">
         <p class="book-blurb">
           A year of shows documented in 70 pages of full-color concert photography.
-          Punk, ska, and emo bands across the Bay Area — captured at 924 Gilman,
+          Punk, ska, and emo bands across the Bay Area, captured at 924 Gilman,
           Fest 23, and DIY venues where the music actually lives.
         </p>
         <p class="book-blurb">
-          Bands featured include Streetlight Manifesto, Less Than Jake, Bad Operation,
-          Omnigone, Half Past Two, and more. Shot on a Sony a7 V. No fluff, no filler —
-          just the photos.
+          Bands featured include Streetlight Manifesto, Less Than Jake, The Suicide Machines,
+          Omnigone, Half Past Two, and more. Shot on a Canon R8. No fluff, no filler.
+          Just the photos.
         </p>
 
         <div class="book-meta">
@@ -158,21 +148,20 @@
             <span class="book-meta-value">Full Color</span>
           </div>
           <div class="book-meta-item">
+            <span class="book-meta-label">Released</span>
+            <span class="book-meta-value">July 2025</span>
+          </div>
+          <div class="book-meta-item">
             <span class="book-meta-label">Ships In</span>
             <span class="book-meta-value">3–5 days</span>
           </div>
           <div class="book-meta-item">
             <span class="book-meta-label">Price</span>
-            <span class="book-meta-value book-price">$40</span>
+            <span class="book-meta-value">$50</span>
           </div>
         </div>
 
-        <a
-          href="https://www.lulu.com/shop/alex-bubin/off-the-record-2025-hardcover/hardcover/product-q6dd7gm.html"
-          class="btn-buy"
-          target="_blank"
-          rel="noopener"
-        >Order on Lulu →</a>
+        <div id="shopify-buy-button" class="buy-button-wrap"></div>
       </div>
 
     </div>
@@ -186,8 +175,8 @@
     <h2 class="section-title">More On The Way</h2>
     <div style="max-width: 640px;">
       <p style="color: var(--offwhite); line-height: 1.8; margin-bottom: 1.5rem;">
-        Another year, another book. I shoot constantly — there's always more in the archive.
-        If you want to know when the next one drops, follow on Instagram or check back here.
+        New prints and the next book are in the works. I shoot constantly, and there's always more
+        in the archive. Follow on Instagram or check back here when fresh stock drops.
       </p>
       <a href="https://www.instagram.com/eyelickss" target="_blank" rel="noopener" class="btn btn-outline">@eyelickss</a>
     </div>
@@ -198,7 +187,7 @@
   <!-- PRESS USE -->
   <section>
     <p class="section-label">Press & Editorial</p>
-    <h2 class="section-title">Use These Photos</h2>
+    <h2 class="section-title">License The Work</h2>
     <div style="max-width: 640px;">
       <p style="color: var(--offwhite); line-height: 1.8; margin-bottom: 1.5rem;">
         Need concert photography for a publication, blog, or music press piece?
@@ -219,7 +208,7 @@
           <li><a href="bands.html">Bands</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="licensing.html">Licensing</a></li>
-          <li><a href="publications.html">Publications</a></li>
+          <li><a href="shop.html">Shop</a></li>
         </ul>
       </nav>
       <div class="footer-social">
@@ -231,5 +220,6 @@
   </footer>
 
   <script src="js/nav.js"></script>
+  <script src="js/shop.js"></script>
 </body>
 </html>
