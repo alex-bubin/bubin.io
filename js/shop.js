@@ -2,8 +2,10 @@
   // Public Storefront API token — scoped read-only, safe in client JS.
   const SHOPIFY_DOMAIN = '7g0zrp-pf.myshopify.com';
   const STOREFRONT_ACCESS_TOKEN = '3b0c8315e6443f9bb58542171111bea6';
-  const PRODUCT_ID = '7965888217136';
-  const NODE_ID = 'shopify-buy-button';
+  const PRODUCTS = [
+    { id: '7994625032240', nodeId: 'shopify-buy-button-2026' },
+    { id: '7965888217136', nodeId: 'shopify-buy-button' }
+  ];
 
   const SDK_URL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
 
@@ -29,22 +31,18 @@
   }
 
   function renderFallback() {
-    const node = document.getElementById(NODE_ID);
-    if (node) node.innerHTML = '<p style="color:var(--grey);font-family:var(--font-mono);font-size:0.75rem;">Shop temporarily unavailable. Email photos@bubin.io to order.</p>';
+    PRODUCTS.forEach(function (p) {
+      const node = document.getElementById(p.nodeId);
+      if (node) node.innerHTML = '<p style="color:var(--grey);font-family:var(--font-mono);font-size:0.75rem;">Shop temporarily unavailable. Email photos@bubin.io to order.</p>';
+    });
   }
 
-  function init() {
-    const client = ShopifyBuy.buildClient({
-      domain: SHOPIFY_DOMAIN,
-      storefrontAccessToken: STOREFRONT_ACCESS_TOKEN
-    });
-
-    ShopifyBuy.UI.onReady(client).then(function (ui) {
-      ui.createComponent('product', {
-        id: PRODUCT_ID,
-        node: document.getElementById(NODE_ID),
-        moneyFormat: '%24%7B%7Bamount%7D%7D',
-        options: {
+  function createButton(ui, product) {
+    ui.createComponent('product', {
+      id: product.id,
+      node: document.getElementById(product.nodeId),
+      moneyFormat: '%24%7B%7Bamount%7D%7D',
+      options: {
           product: {
             buttonDestination: 'checkout',
             contents: { img: false, title: false, price: false, options: false, description: false, quantity: false },
@@ -80,7 +78,17 @@
             }
           }
         }
-      });
+    });
+  }
+
+  function init() {
+    const client = ShopifyBuy.buildClient({
+      domain: SHOPIFY_DOMAIN,
+      storefrontAccessToken: STOREFRONT_ACCESS_TOKEN
+    });
+
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      PRODUCTS.forEach(function (p) { createButton(ui, p); });
     }).catch(function (err) {
       console.error('Shopify Buy Button init failed:', err);
       renderFallback();
